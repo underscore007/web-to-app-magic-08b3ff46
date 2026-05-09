@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  * {
+    @apply border-brand-border;
+  }
+
+  html {
+    @apply scroll-smooth bg-brand-canvas;
+  }
+
+  body {
+    @apply min-h-screen bg-brand-canvas bg-[radial-gradient(circle_at_top_left,rgba(75,156,211,0.18),transparent_24%),radial-gradient(circle_at_top_right,rgba(111,166,122,0.15),transparent_22%),linear-gradient(180deg,#f7fbff_0%,#ffffff_42%,#eaf4ff_100%)] font-body text-brand-text antialiased;
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  ::selection {
+    @apply bg-brand-blue/20 text-brand-text;
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .page-section {
+    @apply shell py-8 sm:py-10 lg:py-12;
+  }
+
+  .page-card {
+    @apply rounded-[1.9rem] border border-brand-border/80 bg-white/88 shadow-panel backdrop-blur-sm;
+  }
+
+  .page-card-soft {
+    @apply rounded-[1.65rem] border border-brand-border/70 bg-white/72 shadow-soft backdrop-blur-sm;
+  }
+
+  .page-card-interactive {
+    @apply page-card transition duration-300 hover:-translate-y-1 hover:border-brand-blue/40 hover:shadow-card;
+  }
+
+  .section-kicker {
+    @apply text-[11px] font-semibold uppercase tracking-[0.32em] text-brand-blue;
+  }
+
+  .section-title {
+    @apply font-display text-2xl font-semibold tracking-tight text-brand-text sm:text-3xl lg:text-[2.15rem];
+  }
+
+  .section-copy {
+    @apply text-base leading-relaxed text-brand-brown/85 sm:text-lg;
+  }
+
+  .input-label {
+    @apply text-sm font-semibold uppercase tracking-[0.18em] text-brand-brown;
+  }
+
+  .input-field {
+    @apply w-full rounded-[1.35rem] border border-brand-border bg-white/90 px-4 py-3 text-base text-brand-text shadow-inner outline-none transition placeholder:text-brand-brown/45 focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/15;
+  }
+
+  .textarea-field {
+    @apply input-field min-h-[3rem] resize-none;
+  }
+
+  .inline-alert {
+    @apply rounded-[1.4rem] border px-4 py-3 text-sm;
+  }
+
+  .inline-alert-error {
+    @apply inline-alert border-rose-200 bg-rose-50 text-rose-700;
+  }
+
+  .inline-alert-success {
+    @apply inline-alert border-emerald-200 bg-emerald-50 text-emerald-700;
+  }
+
+  .progress-track {
+    @apply h-2.5 overflow-hidden rounded-full bg-brand-border/70;
+  }
+
+  .progress-fill {
+    @apply h-full rounded-full bg-gradient-to-r from-brand-blue via-sky-400 to-brand-green transition-all duration-300;
+  }
+
+  .stat-chip {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/80 px-3 py-2 text-sm text-brand-text shadow-sm backdrop-blur-sm;
+  }
+
+  .icon {
+    @apply inline-flex shrink-0 align-middle;
+  }
+
+  .spinner {
+    @apply inline-block h-5 w-5 animate-spin rounded-full border-2 border-brand-blue/20 border-t-brand-blue;
+  }
+}
+
+@layer utilities {
+  .safe-bottom {
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(207, 224, 238, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(75, 156, 211, 0.4);
+  border-radius: 9999px;
+}

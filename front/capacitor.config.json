@@ -1,0 +1,8 @@
+{
+  "appId": "com.eam.mobile",
+  "appName": "EAM",
+  "webDir": "dist",
+  "server": {
+    "cleartext": true
+  }
+}
