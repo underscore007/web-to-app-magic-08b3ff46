@@ -1,0 +1,12 @@
+{
+  "name": "eam-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "preinstall": "cd front && npm install",
+    "dev": "cd front && npm run dev",
+    "build": "cd front && npm run build",
+    "build:dev": "cd front && npm run build",
+    "preview": "cd front && npm run preview"
+  }
+}
